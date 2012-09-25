@@ -1,0 +1,33 @@
+<!-- application/views/scripts/contact/index.phtml -->
+
+<!--<p>
+    <a href="<?php echo $this->url(
+            array(
+                'controller' => 'contact',
+                'action'    => 'sign' 
+            ),
+            'default',
+            true ) ?>" >Sign</a></p>-->
+            <h2>eCards Contacts</h2>
+
+<table border="1" style="border: 0 solid #CCCCEE;background-color: #eeeeFF;">
+  <thead>
+    <tr>
+      <th>Contact Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Passport Id</th>
+      <th>Organization Name</th>
+    </tr>
+  </thead>
+<?php foreach ($this->entries as $entry) : ?>
+    <tr>
+<!--        <td><?php echo $this->escape($entry->id); ?></td> -->
+        <td><?php echo $this->escape($entry->contactNo); ?></td>
+        <td><?php echo $this->escape($entry->firstname); ?></td>
+        <td><?php echo $this->escape($entry->lastname); ?></td>
+        <td><?php echo $this->escape($entry->passID); ?></td>
+        <td><?php echo $this->escape($entry->organization); ?></td>
+    </tr>
+<?php endforeach; ?>        
+</table>
